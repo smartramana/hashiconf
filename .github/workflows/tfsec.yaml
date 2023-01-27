@@ -9,14 +9,20 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
+      actions: read
+      security-events: write
 
     steps:
       - name: Clone repo
         uses: actions/checkout@master
-      - name: tfsec
-        uses: aquasecurity/tfsec-action@v1.0.0
+
+      - name: Run tfsec
+        uses: aquasecurity/tfsec-sarif-action@9a83b5c3524f825c020e356335855741fd02745f
         with:
-          tfsec_args: --force-all-dirs
-          github_token: ${{ github.token }}
-          soft_fail_commenter: true
-          working_directory: ''
+          sarif_file: tfsec.sarif
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: tfsec.sarif
