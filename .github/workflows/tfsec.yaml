@@ -13,3 +13,5 @@ jobs:
         uses: aquasecurity/tfsec-pr-commenter-action@main
         with:
           github_token: ${{ github.token }}
+          working_directory: ''
+          tfsec_args: --concise-output --config-file=.tfsec.yml --custom-check-dir=.tfsec --force-all-dirs
