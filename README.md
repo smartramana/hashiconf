@@ -1,2 +1,2 @@
 # hashiconf
-Terraform example for Hashiconf
+Terraform example for Hashiconf 
