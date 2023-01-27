@@ -9,16 +9,14 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-      actions: read
-      security-events: write
 
     steps:
       - name: Clone repo
         uses: actions/checkout@master
-
-      - name: Run tfsec
-        uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
+      - name: tfsec
+        uses: commercetools/tfsec-pr-commenter-action@v0.1.0
         with:
           tfsec_args: --force-all-dirs
           github_token: ${{ github.token }}
           soft_fail_commenter: true
+          working_directory: ''
