@@ -14,4 +14,4 @@ jobs:
         with:
           github_token: ${{ github.token }}
           working_directory: ''
-          tfsec_args: --concise-output --config-file=.tfsec.yml --custom-check-dir=.tfsec --force-all-dirs
+          tfsec_args: --concise-output --debug --config-file=.tfsec.yml --custom-check-dir=.tfsec --force-all-dirs
