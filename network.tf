@@ -4,7 +4,7 @@ resource "aws_vpc" "acme-vpc" {
   instance_tenancy = "default"
 
   tags = {
-    Name = "acme"
+    Name = "acmehh"
   }
 }
 
