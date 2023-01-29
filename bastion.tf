@@ -19,11 +19,11 @@ resource "aws_instance" "bastion" {
     volume_type           = "gp2"
   }
 
-  tags = {
-    Name    = "bastion"
-    OS      = "Ubuntu"
-    Managed = "Terraform - Infrastructure"
-  }
+#   tags = {
+#     Name    = "bastion"
+#     OS      = "Ubuntu"
+#     Managed = "Terraform - Infrastructure"
+#   }
 
   depends_on = [aws_security_group.bastion-sg]
 }
