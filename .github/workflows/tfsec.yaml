@@ -16,6 +16,4 @@ jobs:
       - name: tfsec
         uses: aquasecurity/tfsec-pr-commenter-action@v1.3.0
         with:
-          working_directory: ''
-          tfsec_args: --soft-fail --concise-output --include-passed --force-all-dirs --minimum-severity MEDIUM
           github_token: ${{ github.token }}
