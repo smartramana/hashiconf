@@ -19,7 +19,7 @@ jobs:
           persist-credentials: false
 
       - name: tfsec
-        uses: suzuki-shunsuke/github-action-tfsec@v0.1.1
+        uses: suzuki-shunsuke/github-action-tfsec@v0.1.7
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           working_directory: ""
