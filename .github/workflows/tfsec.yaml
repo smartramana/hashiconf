@@ -18,9 +18,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: tfsec
-        uses: suzuki-shunsuke/github-action-tfsec@v0.1.7
+      - name: Run tfsec with reviewdog output on the PR
+        uses: reviewdog/action-tfsec@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          working_directory: ""
-          github_comment: true # Enable github-comment notification
+          github_token: ${{ secrets.github_token }}
