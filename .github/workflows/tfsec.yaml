@@ -18,8 +18,8 @@ jobs:
         with:
           persist-credentials: false
 
-      - id: tfsec
       - name: Run tfsec with reviewdog output on the PR
+        id: tfsec
         uses: reviewdog/action-tfsec@master
         with:
           github_token: ${{ secrets.github_token }}
